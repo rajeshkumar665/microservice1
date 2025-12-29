@@ -1,0 +1,9 @@
+FROM openjdk:17
+
+COPY target/microservice1.jar  /usr/app/
+
+WORKDIR /usr/app/
+
+EXPOSE 89091
+
+ENTRYPOINT ["java", "-jar", "microservice1.jar"]
