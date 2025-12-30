@@ -1,9 +1,9 @@
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk-jammy
 
-COPY target/microservice1.jar  /usr/app/
+WORKDIR /usr/app
 
-WORKDIR /usr/app/
+COPY target/*.jar app.jar
 
-EXPOSE 89091
+EXPOSE 9091
 
-ENTRYPOINT ["java", "-jar", "microservice1.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
